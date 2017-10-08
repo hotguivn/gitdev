@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+        <script src="../controllers/app.js"></script>
+        <title>Interacting with Github API</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body ng-controller="MainCtrl as vm">
+        <label for="enter">Enter a username</label>    
+        <input type="text" ng-model="user.name">    
+        <button ng-click="vm.fetchData(user)">Go!</button>
+            <h4 ng-if="vm.loading === true">Loading...</h4>
+        <h3>{{vm.data}}</h3>
+    </body>
+    
+</html>
